@@ -14,7 +14,7 @@ code {
 
 .map-container {
   display: flex;
-  height: 100vh;
+  height: 70vh;
 }
 
 .input-container {
@@ -26,15 +26,24 @@ code {
 
 .map {
   width: 80%; 
-  height: 100vh;
+  height: 100%;
 }
 
 .google-map-container {
   width: 100%;
-  height: 100vh;
+  height: 100%;
 }
 
 .combobox-input {
   width: 100%;
   padding: auto;
+}
+
+.directions-container {
+  align-items: flex-end;
+}
+
+.user-page {
+  display: flex;
+  flex-direction: column;
 }
