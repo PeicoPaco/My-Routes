@@ -1,8 +1,9 @@
+import React from 'react'
 import  usePlacesAutocomplete, { getGeocode, getLatLng} from 'use-places-autocomplete';
 import { Combobox, ComboboxInput, ComboboxPopover, ComboboxList, ComboboxOption} from '@reach/combobox';
 import "@reach/combobox/styles.css"
 
-import React from 'react'
+
 
 export default function Destinations({setDestination}) {
     const {ready, value, setValue, suggestions: {status, data}, clearSuggestions} = usePlacesAutocomplete()

@@ -1,0 +1,84 @@
+* {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #594f4f;
+  }
+  
+  nav {
+    display: flex;
+    background: #c06c84;
+    height: auto;
+    text-decoration: none;
+  }
+  
+  .dashboard {
+    margin-top: 4rem;
+    text-align: center;
+  }
+  
+  ul {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    list-style: none;
+  }
+  
+  li {
+    display: inline-block;
+  }
+  
+  li a {
+    display: block;
+    color: #fafafa;
+    text-align: center;
+    padding: 3rem;
+    font-size: 1.2rem;
+    text-decoration: none;
+  }
+  
+  li a:hover {
+    background: #6c5b7b;
+  }
+  
+  .form {
+    max-width: 40vw;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    margin: auto;
+  }
+  
+  input {
+    margin: 0.2rem 0;
+    padding: 0.2rem 0.5rem;
+    font-size: 1rem;
+  }
+  
+  .form-submit,
+  .confirm-btn {
+    border: 0;
+    background: none;
+    box-shadow: none;
+    margin: 1rem 0;
+    border-radius: 0.5rem;
+    padding: 0.5rem;
+    background: #c06c84;
+    color: #fafafa;
+    font-size: 1rem;
+  }
+  
+  .confirm-btn {
+    margin: 1rem 2rem;
+    padding: 1rem 2rem;
+    border-radius: 1rem;
+  }
+  
+  .form-submit:hover,
+  .confirm-btn:hover {
+    cursor: pointer;
+  }
+  
+  .form-submit:disabled,
+  .confirm-btn:disabled {
+    background: #c3c3c3;
+  }
+  
