@@ -5,7 +5,7 @@ const SECRET_KEY = 'Vivaelperu';
 const authMiddleware = async(req, res, next) => {
     const authHeaders = req.headers['authorization'];
     if (!authHeaders) return res.sendStatus(403);
-    const token = authHeaders.split('')[1];
+    const token = authHeaders.split(' ')[1];
 
     try {
         const {id} = jwt.verify(token, SECRET_KEY);

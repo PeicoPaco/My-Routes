@@ -5,7 +5,7 @@ const SECRET_KEY = 'Vivaelperu';
 
 const create = async(req, res) => {
     const {email, password} = req.body;
-    const user = User.findOne({where: {email: email}});
+    const user = await User.findOne({where: {email: email}});
     if (user)
         return res 
             .status(409)
@@ -32,8 +32,8 @@ const login = async(req, res) => {
         const user = await User.findOne({where: {email: email}});
         const validatedPass = await bcrypt.compare(password, user.password);
         if (!validatedPass) throw new Error();
-        const accesToken = jwt.sign({id: user.id}, SECRET_KEY);
-        res.status(200).send({accesToken});
+        const accessToken = jwt.sign({id: user.id}, SECRET_KEY);
+        res.status(200).send({accessToken});
     } catch (error) {
         res
             .status(401)

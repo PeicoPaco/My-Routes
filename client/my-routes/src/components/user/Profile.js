@@ -16,11 +16,11 @@ const Profile = () => {
     const office = state.home || 'My Office';
 
     useEffect(() => {
-        const accessToken = localStorage.getItem('accesToken');
+        const accessToken = localStorage.getItem('accessToken');
         const getProfile = async (accessToken) => {
             const userInfo = await apiServiceJWT.profile(accessToken);
             if (userInfo) {
-                const {nickname} = userNickname;
+                const nickname = userInfo.nickname;
                 setState((prevState) => {
                     return {...prevState, nickname};
                 });

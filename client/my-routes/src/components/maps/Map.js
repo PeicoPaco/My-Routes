@@ -12,6 +12,7 @@ import Directions from './Directions';
 
 export default function Map() {
   const google = window.google;
+  const [tmode, setTmode] = useState();
   const [origin, setOrigin] = useState();
   const [destination, setDestination] = useState();
   const [directions, setDirections] = useState();
@@ -25,15 +26,27 @@ export default function Map() {
   const onLoad = useCallback(map => (mapRef.current = map), []);
   
 
-  const fetchDirections = (origin)  => {
-    if (!destination) return;
-    if (!origin) return;
+  const fetchDirections = (origin, mode)  => {
+    let output;
+    switch(mode) {
+      case 1: output = google.maps.TravelMode.DRIVING;
+              setTmode('Driving');
+              break;
+      case 2: output = google.maps.TravelMode.WALKING;
+              setTmode('Walking');
+              break;
+      case 3: output = google.maps.TravelMode.TRANSIT;
+              setTmode('Transit');
+              break;
+      default: output = google.maps.TravelMode.DRIVING;
+    }
+    if (!destination || !origin) return;
     let service = new google.maps.DirectionsService()
     service.route(
     {
       origin: origin,
       destination: destination, 
-      travelMode: google.maps.TravelMode.DRIVING,
+      travelMode: output,
     },
     (result, status) => {
       if (status === 'OK' && result)
@@ -62,7 +75,11 @@ export default function Map() {
                   mapRef.current.panTo(position);
                 }}
                 ></Destinations>
-                <button onClick={() => {fetchDirections(origin)}}>Find Route</button>
+                <div className='button-container'>
+                  <button onClick={() => {fetchDirections(origin, 1)}}>🚗</button>
+                  <button onClick={() => {fetchDirections(origin, 2)}}>🚶‍♂️</button>
+                  <button onClick={() => {fetchDirections(origin, 3)}}>🚋</button>
+                </div>
           </div>
           <div className='map'>
               <GoogleMap 
@@ -79,8 +96,9 @@ export default function Map() {
           </div>
       </div>
       <div>
-      {directions &&
-      <Directions leg={directions.routes[0].legs[0]}/>
+      {directions && (
+        <Directions leg={directions.routes[0].legs[0]}/>
+        )
       }
       </div>
     </div>

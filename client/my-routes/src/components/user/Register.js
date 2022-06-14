@@ -32,8 +32,8 @@ const Register = (props) => {
             alert(`${res.message}`);
             setState(initialState);
         } else {
-            const {accesToken} = res;
-            localStorage.setItem('accesToken', accesToken);
+            const {accessToken} = res;
+            localStorage.setItem('accessToken', accessToken);
             props.setIsAuthenticated(true);
             auth.login(() => navigate('/profile'));
         }
