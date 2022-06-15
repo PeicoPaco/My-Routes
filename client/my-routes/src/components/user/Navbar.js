@@ -24,10 +24,10 @@ const Navbar = ({ isAuthenticated }) => {
             </>
           ) : (
             <>
-              <li>
+              <li className="register-navbar">
                 <Link to="/register">Register</Link>
               </li>
-              <li>
+              <li className="login-navbar">
               <Link to="/login">Login</Link>
               </li>
             </>

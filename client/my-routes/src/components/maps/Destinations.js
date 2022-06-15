@@ -2,6 +2,7 @@ import React from 'react'
 import  usePlacesAutocomplete, { getGeocode, getLatLng} from 'use-places-autocomplete';
 import { Combobox, ComboboxInput, ComboboxPopover, ComboboxList, ComboboxOption} from '@reach/combobox';
 import "@reach/combobox/styles.css"
+import PropTypes from 'prop-types'
 
 
 
@@ -16,7 +17,7 @@ export default function Destinations({setDestination}) {
         setDestination({lat, lng});
     }
     return (
-    <div className='directions-container'>
+    <div className='directions-combobox'>
         <h4>Destination</h4>
         <Combobox onSelect={handleSelect}>
             <ComboboxInput 
@@ -37,3 +38,7 @@ export default function Destinations({setDestination}) {
     </div>
   )
 }
+
+Destinations.propTypes = {
+    setDestination: PropTypes.any
+  } 

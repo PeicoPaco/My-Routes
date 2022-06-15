@@ -2,15 +2,20 @@ import React from 'react'
 import PropTypes from 'prop-types'
 
 Directions.propTypes = {
-  leg: PropTypes.any
+  leg: PropTypes.any,
+  cost: PropTypes.any
 } 
 
-export default function Directions({leg}) {
+export default function Directions({leg, cost}) {
   if (!leg.duration || !leg.distance) return null;
   return (
-    <div className='directions-container'>
-        <h2>Directions</h2>
-        <div className='duration'>{leg.duration.text}</div>
+    <div className='information-headers'>
+      <ul>
+        <li>{leg.distance.text}</li>
+        <li>{leg.duration.text}</li>
+        <li>{cost} $</li>
+      </ul>
+        <div className='duration'></div>
   
     </div>
     

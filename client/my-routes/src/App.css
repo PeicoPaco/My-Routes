@@ -1,17 +1,19 @@
 * {
     font-family: Arial, Helvetica, sans-serif;
-    color: #594f4f;
+    margin: 0;
   }
   
   nav {
     display: flex;
-    background: #c06c84;
-    height: auto;
-    text-decoration: none;
+    background: #003049;
+    width: 100%;
+    height: 90px;
+    left: 0px;
+    top: 0px;
   }
   
   .dashboard {
-    margin-top: 4rem;
+    margin-top: 2rem;
     text-align: center;
   }
   
@@ -19,7 +21,6 @@
     margin: 0;
     padding: 0;
     overflow: hidden;
-    list-style: none;
   }
   
   li {
@@ -30,13 +31,13 @@
     display: block;
     color: #fafafa;
     text-align: center;
-    padding: 3rem;
+    padding: 2rem 2rem;
     font-size: 1.2rem;
     text-decoration: none;
   }
   
   li a:hover {
-    background: #6c5b7b;
+    background: #219EBC;
   }
   
   .form {
@@ -61,7 +62,7 @@
     margin: 1rem 0;
     border-radius: 0.5rem;
     padding: 0.5rem;
-    background: #c06c84;
+    background: #FF7A00;
     color: #fafafa;
     font-size: 1rem;
   }
@@ -81,4 +82,76 @@
   .confirm-btn:disabled {
     background: #c3c3c3;
   }
+
+  .register-navbar {
+    justify-self: flex-end;
+  }
+
+  .login-navbar {
+    justify-self: flex-end;     
+  }
+
+  .text-container h2 {
+    color: white;
+    padding: 2rem;
+    opacity: 1.0;
+  }
+
+  .text-container h4 {
+    margin-bottom: 2rem;
+    margin-top: 0;
+    color: white;
+    opacity: 1.0;
+  }
+
+  .text-container button {
+    background-color: #FF7A00;
+    color: white;
+    border-radius: 14px;
+    width: 150px;
+    height: 30px;
+    border: 0px;
+    opacity: 1.0;
+    font-weight: 600;
+  }
+
+  .image-container {
+    position: absolute;
+    height: 500px;
+    width: 60%;
+    top: 180px;
+    left: 21%;
+    background-image: url(https://images.unsplash.com/photo-1551952237-954a0e68786c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8Y2FyJTIwb24lMjB0aGUlMjByb2FkfGVufDB8fDB8fA%3D%3D&w=1000&q=80);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .overlay {
+    background-color: rgba(0, 48, 73, 0.4);
+    height: 100%;
+  }
+
+  .user-info-container {
+    background-color: #003049;
+    margin-bottom: 2rem;
+    display: flex;
+    flex-direction: column;
+    color: white;
+  }
+
+  .user-info-container ul {
+    display: flex;
+    justify-content: space-around;
+    color: white;
+    padding: 1rem;
+  }
+
+  .user-info-container p {
+    margin: 1rem;
+    color: #FF7A00;
+  }
+
+  
+
   

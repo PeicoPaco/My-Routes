@@ -12,7 +12,7 @@ import Directions from './Directions';
 
 export default function Map() {
   const google = window.google;
-  const [tmode, setTmode] = useState();
+  const [cost, setCost] = useState();
   const [origin, setOrigin] = useState();
   const [destination, setDestination] = useState();
   const [directions, setDirections] = useState();
@@ -30,13 +30,13 @@ export default function Map() {
     let output;
     switch(mode) {
       case 1: output = google.maps.TravelMode.DRIVING;
-              setTmode('Driving');
+              setCost(10)
               break;
       case 2: output = google.maps.TravelMode.WALKING;
-              setTmode('Walking');
+              setCost(0)
               break;
       case 3: output = google.maps.TravelMode.TRANSIT;
-              setTmode('Transit');
+              setCost(4);
               break;
       default: output = google.maps.TravelMode.DRIVING;
     }
@@ -55,10 +55,6 @@ export default function Map() {
   )
   }
   
-  
-
-
-
   return (
     <div className='user-page'>
       <div className='map-container'>
@@ -95,11 +91,19 @@ export default function Map() {
               </GoogleMap>
           </div>
       </div>
-      <div>
-      {directions && (
-        <Directions leg={directions.routes[0].legs[0]}/>
-        )
-      }
+      <div className="destinations-container">
+        <h4>Trip Info</h4>
+        <div className='information-headers'>
+          <ul>
+            <li><strong>Distance</strong></li>
+            <li><strong>Time</strong></li>
+            <li><strong>Cost</strong></li>
+          </ul>
+        </div>
+        {directions && (
+          <Directions leg={directions.routes[0].legs[0]} cost = {cost}/>
+          )
+        }
       </div>
     </div>
   )

@@ -34,10 +34,10 @@ const Profile = () => {
     return (
         <section>  
             <div className="user-info-container">
+                <h2>Welcome back {nickname}!</h2>
                 <ul>
-                    <li>Where to go {nickname}</li>
-                    <li>Home: {home}</li>
-                    <li>Office: {office}</li>
+                    <li>Home: <p>My Home</p></li>
+                    <li>Office: <p>My Office</p></li>
                 </ul>
             </div>
             <Map></Map>
